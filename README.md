@@ -8,9 +8,11 @@ Need to do:
 
 ---
 
-| Tables        | Are           | Cool  |
+
+## Design Pattern
+
+| peoblems      | comment or blog| src  |
 | ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| singleton     | [C-plus-plus-In-Theory-The-Singleton-Pattern](https://www.devarticles.com/c/a/Cplusplus/C-plus-plus-In-Theory-The-Singleton-Pattern-Part-I/) | [click](https://github.com/qfai/CodingProblemReview/blob/master/src/singleton_template.cpp)|
+
 
