@@ -10,9 +10,10 @@ Need to do:
 ## Interview_problem
 | catagory      | comment or blog| src  |
 | ------------- |:-------------:| -----:|
-| Network     | [C-plus-plus-In-Theory-The-Singleton-Pattern](https://www.devarticles.com/c/a/Cplusplus/C-plus-plus-In-Theory-The-Singleton-Pattern-Part-I/) | [click](https://github.com/qfai/CodingProblemReview/blob/master/interview_problem/Network.md)|
-| Operating System     | [C-plus-plus-In-Theory-The-Singleton-Pattern](https://www.devarticles.com/c/a/Cplusplus/C-plus-plus-In-Theory-The-Singleton-Pattern-Part-I/) | [click](https://github.com/qfai/CodingProblemReview/blob/master/interview_problem/os.md)|
-| C++    | [C-plus-plus-In-Theory-The-Singleton-Pattern](https://www.devarticles.com/c/a/Cplusplus/C-plus-plus-In-Theory-The-Singleton-Pattern-Part-I/) | [click](https://github.com/qfai/CodingProblemReview/blob/master/interview_problem/cpp.md)|
+| Network     |  | [click](https://github.com/qfai/CodingProblemReview/blob/master/interview_problem/Network.md)|
+| Operating System     | | [click](https://github.com/qfai/CodingProblemReview/blob/master/interview_problem/os.md)|
+| C++    |  | [click](https://github.com/qfai/CodingProblemReview/blob/master/interview_problem/cpp.md)|
+| Graphics    |  | [click](https://github.com/qfai/CodingProblemReview/blob/master/interview_problem/graphics.md)|
 
 ## Design Pattern
 
