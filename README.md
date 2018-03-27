@@ -14,7 +14,7 @@ Need to do:
 | 最长公共子序列    | DP | [click](https://github.com/qfai/CodingProblemReview/blob/master/src/LCS.cpp)|
 | 快速幂| bits |[click](https://github.com/qfai/CodingProblemReview/blob/master/src/quick_pow.cpp)|
 |浮点数幂,开方实现| [扩展](https://www.zhihu.com/question/20930598)|待写 |
-
+|判断括号合法性| 如果我们从前到后遍历，左括号可以暂时多于右括号，但不可以少于，每次成功闭合一对括号把数量 - 1 ，得到负数说明不平衡|待写|
 
 
 ## Interview_problem
