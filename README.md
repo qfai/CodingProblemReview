@@ -7,6 +7,16 @@ Need to do:
 
 
 ---
+## paper_work
+
+| catagory      | comment or blog| src  |
+| ------------- |:-------------:| -----:|
+| 最长公共子序列    | DP | [click](https://github.com/qfai/CodingProblemReview/blob/master/src/LCS.cpp)|
+| 快速幂| bits |[click](https://github.com/qfai/CodingProblemReview/blob/master/src/quick_pow.cpp)|
+|浮点数幂,开方实现| [扩展](https://www.zhihu.com/question/20930598)|待写 |
+
+
+
 ## Interview_problem
 | catagory      | comment or blog| src  |
 | ------------- |:-------------:| -----:|

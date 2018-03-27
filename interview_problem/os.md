@@ -1,5 +1,34 @@
 # Operating System
 
+## 大小端
+![](http://img.blog.csdn.net/20170906230027562?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDg4OTYxNg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+C++代码验证大端还是小端存储
+```
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    int nNum = 0x12345678;
+    char chData = *(char*)(&nNum);
+
+    if (chData == 0x12)
+    {
+        cout << "big" << endl;
+    }
+    else
+    {
+        cout << "small" << endl;
+    }
+
+    system("PAUSE");
+
+    return 0;
+}
+
+```
+
 线程间的同步方法大体可分为两类：用户模式和内核模式。顾名思义，内核模式就是指利用系统内核对象的单一性来进行同步，使用时需要切换内核态与用户态，而用户模式就是不需要切换到内核态，只在用户态完成操作。
 
 用户模式下的方法有：原子操作（例如一个单一的全局变量），临界区。
