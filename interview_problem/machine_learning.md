@@ -17,8 +17,23 @@
 - [SVM](#SVM)
 - [KNN](#KNN, K-MEANS, K-MEDOIDS)
 - [Logistic regression](#LR)
+- [贝叶斯](#贝叶斯)
+- [梯度下降法](#梯度下降法)
+- [KDD](#KDD)
+- [python](#python)
+- [SVD PCA](#SVD PCA)
+- [基本问题](#基本问题)
+- [深度学习](#深度学习)
 - [Tensorflow](#Tensorflow)
-- 
+- [计算机视觉](#计算机视觉)
+- [生成对抗网络](#生成对抗网络)
+- [集成学习](#集成学习)
+- [随机森林](#随机森林)
+- [XGBoost](#XGBoost)
+- [Adaboost](#Adaboost)
+- [判别式模型](#判别式模型)
+- [生成模型](#生成模型)
+- [面试前](#面试前)
 
 
 ---
@@ -168,7 +183,7 @@ minw,b∑iN[1−yi(w∗xi+b)]+λ||w||2
 
 ### Tensorflow
 
-- [ ] [bilibili 视频]()
+- [ ] [bilibili 视频](https://www.bilibili.com/video/av9156347/index_2.html#page=2)
 - [ ] 计算图的了解
 - [ ]
 
@@ -215,3 +230,6 @@ minw,b∑iN[1−yi(w∗xi+b)]+λ||w||2
 - [BAT机器学习面试1000题系列](https://blog.csdn.net/sinat_35512245/article/details/78796328](https://blog.csdn.net/sinat_35512245/article/details/78796328)
 - [百度2015校招机器学习笔试题](http://www.itmian4.com/thread-7042-1-1.html)
 - [ 机器学习面试问题集（2018-3-13更新）](https://blog.csdn.net/u011239443/article/details/76360294)
+- [ awesome deep version](https://github.com/kjw0612/awesome-deep-vision)
+- [ awesome computer vision](https://github.com/jbhuang0604/awesome-computer-vision)
+- [awesome c++](https://github.com/fffaraz/awesome-cpp)
