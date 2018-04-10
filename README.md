@@ -19,7 +19,7 @@ Need to do:
 | 快速幂| bits |[click](https://github.com/qfai/CodingProblemReview/blob/master/src/quick_pow.cpp)|
 |浮点数幂,开方实现| [扩展](https://www.zhihu.com/question/20930598)|待写 |
 |判断括号合法性| 如果我们从前到后遍历，左括号可以暂时多于右括号，但不可以少于，每次成功闭合一对括号把数量 - 1 ，得到负数说明不平衡|待写|
-
+|背包问题| 背包问题九讲和记录不同的背包问题|待写|
 
 ## Interview_problem
 | catagory      | comment or blog| src  |
