@@ -16,6 +16,10 @@
 - [简易Q&A](#简易Q&A)
 - [static和const区别](#static和const区别)
 - [内存段](#内存段)
+- [数据库索引的实现](#数据库索引的实现)
+- [红黑树](#红黑树)
+- [string类](#string类)
+- [static和const区别](#static和const区别)
 ---
 1. C++方面的基础和细节问题（sizeof(非常细，其实做过不少题，但还是错了一个)，*（a++）+= (*a++)等这类的问题，reinterpret_cast的详细用法）等吧 
 2. 手写String(构造，析构，复制构造，operator=, C_str)和其他的算法； 
@@ -464,3 +468,17 @@ private:
 	size_t length;	//长度
 };
 ```
+
+### 红黑树
+https://blog.csdn.net/sun_tttt/article/details/65445754
+
+定义
+1. 性质一：节点是红色或者是黑色； 
+2. 性质二：根节点是黑色； 
+3. 性质三：每个叶节点（NIL或空节点）是黑色；
+4.  性质四：每个红色节点的两个子节点都是黑色的（也就是说不存在两个连续的红色节点）；
+5.  从根节点到每一个NIL节点的路径中，都包含了相同数量的黑色节点。 
+
+### 数据库索引的实现
+
+https://www.cnblogs.com/coprince/p/5695113.html
