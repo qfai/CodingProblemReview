@@ -427,3 +427,40 @@ const：一个变量用const修饰，说明该变量不可以被修改
 1. static限制了变量的作用域，但是#define没有，如果我们仅仅想在一个文件内部使用一个常量，而不影响其他的文件的宏，如果用define，那么所有导入了该文件的那些文件中要是有一个相同的变量，那么这些变量都会被替换 
 2. static 形式的常量定义，可以知道其类型，代码可读性好 
 3. const的修饰使得该变量在修改会保存，确保其不会被修改，但是#define却不会，值可能会被修改
+
+
+
+### string类
+https://www.cnblogs.com/zhizhan/p/4876093.html
+
+sizeof(string)==28(vs) sizeof不是函数，相当于宏，因为编译器知道每个类的大小
+
+
+- 若干个运算符重载，这里的几个是常见的运算符，可以加深对String的认识和运算符重载的理解。
+- 两个常用的函数，包括取字符串长度和取C类型的字符串。
+- 两个处理输入输出的运算符重载，为了使用的方便，这里把这两个运算符定义为友元函数。
+```
+class String
+{
+public:
+	String(const char *str = NULL);	//通用构造函数
+	String(const String &str);		//拷贝构造函数
+	~String();						//析构函数
+
+	String operator+(const String &str) const;	//重载+
+	String& operator=(const String &str);		//重载=
+	String& operator+=(const String &str);		//重载+=
+	bool operator==(const String &str) const;	//重载==
+	char& operator[](int n) const;				//重载[]
+
+	size_t size() const;		//获取长度
+	const char* c_str() const;	//获取C字符串
+
+	friend istream& operator>>(istream &is, String &str);//输入
+	friend ostream& operator<<(ostream &os, String &str);//输出
+
+private:
+	char *data;		//字符串
+	size_t length;	//长度
+};
+```
