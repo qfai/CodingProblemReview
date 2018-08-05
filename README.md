@@ -34,7 +34,7 @@ Need to do:
 | peoblems      | comment or blog| src  |
 | ------------- |:-------------:| -----:|
 | singleton     | [C-plus-plus-In-Theory-The-Singleton-Pattern](https://www.devarticles.com/c/a/Cplusplus/C-plus-plus-In-Theory-The-Singleton-Pattern-Part-I/) | [click](https://github.com/qfai/CodingProblemReview/blob/master/src/singleton_template.cpp)|
-
+| 最长公共子序列     | [写的很棒，图很好，Manacher 算法](https://segmentfault.com/a/1190000003914228) | [click](https://github.com/qfai/CodingProblemReview/blob/master/src/Longest_Palindromic_Substring.cpp)|
 ## 面经
 | Company      | comment or blog| link  |
 | ------------- |:-------------:| -----:|
