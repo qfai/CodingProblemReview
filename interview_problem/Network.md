@@ -98,3 +98,48 @@ TCP与UDP区别总结：
 4、每一条TCP连接只能是点到点的;UDP支持一对一，一对多，多对一和多对多的交互通信
 5、TCP首部开销20字节;UDP的首部开销小，只有8个字节
 6、TCP的逻辑通信信道是全双工的可靠信道，UDP则是不可靠信道
+
+
+### 网络编程模型
+
+#### 阻塞型的网络编程接口：  listen()、send()、recv() 等接口开始的。使用这些接口可以很方便的构建服务器 / 客户机的模型。
+大部分的 socket 接口都是阻塞型的。所谓阻塞型接口是指系统调用（一般是 IO 接口）不返回调用结果并让当前线程一直阻塞，只有当该系统调用获得结果或者超时出错时才返回。
+![](https://www.ibm.com/developerworks/cn/linux/l-cn-edntwk/image001.jpg)
+#### 多线程的服务器程序：
+主线程持续等待客户端的连接请求，如果有连接，则创建新线程，并在新线程中提供为前例同样的问答服务。
+
+很多初学者可能不明白为何一个 socket 可以 accept 多次。实际上，socket 的设计者可能特意为多客户机的情况留下了伏笔，让 accept() 能够返回一个新的 socket。
+
+int accept(int s, struct sockaddr *addr, socklen_t *addrlen);
+
+输入参数 s 是从 socket()，bind() 和 listen() 中沿用下来的 socket 句柄值。执行完 bind() 和 listen() 后，操作系统已经开始在指定的端口处监听所有的连接请求，如果有请求，则将该连接请求加入请求队列。调用 accept() 接口正是从 socket s 的请求队列抽取第一个连接信息，创建一个与 s 同类的新的 socket 返回句柄。新的 socket 句柄即是后续 read() 和 recv() 的输入参数。如果请求队列当前没有请求，则 accept() 将进入阻塞状态直到有请求进入队列。
+
+很多程序员可能会考虑使用“**线程池**”或“**连接池**”。“线程池”旨在减少创建和销毁线程的频率，其维持一定合理数量的线程，并让空闲的线程重新承担新的执行任务。“连接池”维持连接的缓存池，尽量重用已有的连接、减少创建和关闭连接的频率。
+![https://www.ibm.com/developerworks/cn/linux/l-cn-edntwk/image002.jpg](https://www.ibm.com/developerworks/cn/linux/l-cn-edntwk/image002.jpg)
+
+#### 非阻塞的服务器程序
+
+非阻塞的接口相比于阻塞型接口的显著差异在于，在被调用之后立即返回。
+使用如下的函数可以将某句柄 fd 设为非阻塞状态。
+
+fcntl( fd, F_SETFL, O_NONBLOCK );
+
+在非阻塞状态下，recv() 接口在被调用后立即返回，返回值代表了不同的含义。如在本例中，
+
+- recv() 返回值大于 0，表示接受数据完毕，返回值即是接受到的字节数；
+- recv() 返回 0，表示连接已经正常断开；
+- recv() 返回 -1，且 errno 等于 EAGAIN，表示 recv 操作还没执行完成；
+- recv() 返回 -1，且 errno 不等于 EAGAIN，表示 recv 操作遇到系统错误 errno。
+- 
+可以看到服务器线程可以通过**循环调用 recv() 接口**，可以在单个线程内实现对所有连接的数据接收工作。不推荐
+
+![https://www.ibm.com/developerworks/cn/linux/l-cn-edntwk/image003.jpg](https://www.ibm.com/developerworks/cn/linux/l-cn-edntwk/image003.jpg)
+
+#### 使用 select() 接口的基于事件驱动的服务器模型
+
+上述模型中，最关键的地方是如何动态维护 select() 的三个参数 readfds、writefds 和 exceptfds。作为输入参数，readfds 应该标记所有的需要探测的“可读事件”的句柄，其中永远包括那个探测 connect() 的那个“母”句柄；同时，writefds 和 exceptfds 应该标记所有需要探测的“可写事件”和“错误事件”的句柄 ( 使用 FD_SET() 标记 )。
+
+首先，select() 接口并不是实现“事件驱动”的最好选择。因为当需要探测的句柄值较大时，select() 接口本身需要消耗大量时间去轮询各个句柄。很多操作系统提供了更为高效的接口，如 linux 提供了 epoll，
+
+其次，该模型将事件探测和事件响应夹杂在一起，一旦事件响应的执行体庞大，则对整个模型是灾难性的。如下例，庞大的执行体 1 的将直接导致响应事件 2 的执行体迟迟得不到执行，并在很大程度上降低了事件探测的及时性。
+![https://www.ibm.com/developerworks/cn/linux/l-cn-edntwk/image004.jpg](https://www.ibm.com/developerworks/cn/linux/l-cn-edntwk/image004.jpg)
