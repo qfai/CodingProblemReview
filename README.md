@@ -1,13 +1,39 @@
+[[_TOC_]]
 # CodingProblemReview
 This a personal leetcode,hiho, kikstart problem solving and paper work repository
 
-Need to do:
-#### 1. avoid code repeat as more as possible
-#### 2. trying to deal with google format
+After work like a year, I am thinking my objective is cloud computing, focusing on storage, buildout, deployment.
+
+It is a little bit difference from compus hire, so tring to record here
+
+## First thing is resume
+
+Search in google about picture of "resume-software engineer" to get a idea what a social hire resume should be like
+
+and some links [here](https://tanchao.github.io/2016/08/10/how-to-seek-job.html)
+
+## Second thing is Interview problems
+
+Leetcode,need to make a plan
+
+System design
+
+## Third thing about experiences
+1. make a story of your experiences. 
+    1. what is the project
+    2. why this project exist
+    3. what you have done in this project, what's the contribution and how you did this.
+    4. what you learn from this project
+2. what technoledge you have used
+    1. what is this tech and why you use it
+    2. are there any competors and why you choose this one, pro and cons.
 
 
----
-[TO DO LISTS FOR MARCHINE LEARNING!!!](https://github.com/qfai/CodingProblemReview/blob/master/interview_problem/machine_learning.md)
+## Not so sure about general compus hire problem like what const mean in c++. will skip this for now.
+
+### New TODO [here](https://github.com/qfai/CodingProblemReview/blob/master/interview_problem/todo.md)
+
+-----------------------------------Below are compus hire records ------------------------------------------------
 
 [TO LISTS](https://github.com/qfai/CodingProblemReview/blob/master/interview_problem/mytodo.md)
 
